@@ -28,10 +28,24 @@ function Map() {
 
   function coords(coordinates) {
     var border = []
-     for (var element of coordinates) {
-       border.push({lat: element[1], lng: element[0]});
-     }
+      for (var element of coordinates) {
+        border.push({lat: element[1], lng: element[0]});
+      }
     return border;
+  }
+
+  function getColor(coordinate) {
+
+    //GREEN - YELLOW - ORANGE - RED (in respective order)
+    const colors = ['#158901', '#efe977', '#e27c4d', '#b2313c']
+
+    //Comment this line of code out
+    return colors[Math.floor(Math.random() * Math.floor(4))]
+
+    //INSERT COLOR LOGIC HERE 
+
+    // coordinate is the location of a park in the form {lat: xxx, lng: xxx}
+
   }
 
   return (
@@ -45,7 +59,7 @@ function Map() {
             path={coords(park.geometry.coordinates[0])}
             key={park.properties.OBJECTID}
             options={{
-                fillColor: "#000",
+                fillColor: getColor(park.geometry.coordinates[0][0]),
                 fillOpacity: 0.4,
                 strokeColor: "#000",
                 strokeOpacity: 1,
@@ -55,21 +69,6 @@ function Map() {
                 setSelectedPark(park);
                 alert('There are about '+ (Math.floor(Math.random() * (40 - 20) ) + 20) + ' people in this area');
             }}/>
-            // <Marker>
-            //   key={park.properties.OBJECTID * 10}
-            //   position={{
-            //     lat: park.geometry.coordinates[0][0][1],
-            //     lng: park.geometry.coordinates[0][0][0]
-            //   }}
-            //   onClick={() => {
-            //     setSelectedPark(park);
-            //   }}
-            //   icon={{
-            //     url: `/marker.png`,
-            //     scaledSize: new window.google.maps.Size(123, 90)
-            //   }}
-            // </Marker>
-
       ))}
 
       {selectedPark && (
@@ -77,10 +76,7 @@ function Map() {
           onCloseClick={() => {
             setSelectedPark(null);
           }}
-          position={{
-            lat: selectedPark.geometry.coordinates[0][0][1],
-            lng: selectedPark.geometry.coordinates[0][0][0]
-          }}
+          position={{lat: selectedPark.geometry.coordinates[0][0][1], lng: selectedPark.geometry.coordinates[0][0][0]}}
         >
           <div>
             <h2>{selectedPark.properties.SITE_NAME}</h2>
