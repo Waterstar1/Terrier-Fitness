@@ -46,7 +46,7 @@ function Footer() {
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
             Terrier Fitness
-              <i class='fab fa-typo3' />
+              <i class="fas fa-dog"></i>
             </Link>
           </div>
           <small class='website-rights'>Terrier Fitness © 2020</small>

@@ -11,34 +11,34 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-9.jpg'
-              text='Explore the hidden waterfall deep inside the Amazon Jungle'
-              label='Adventure'
+              text='Trail Running with Coach Pax from Restore Human'
+              label='Running &Jogging'
               path='/services'
             />
             <CardItem
               src='images/img-2.jpg'
-              text='Travel through the Islands of Bali in a Private Cruise'
-              label='Luxury'
+              text='Restorative Yoga'
+              label='Yoga & Meditation'
               path='/services'
             />
           </ul>
           <ul className='cards__items'>
             <CardItem
               src='images/img-3.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-              label='Mystery'
+              text='Outdoor Hip Hop Flow'
+              label='Dance Fitness'
               path='/services'
             />
             <CardItem
               src='images/img-4.jpg'
-              text='Experience Football on Top of the Himilayan Mountains'
-              label='Adventure'
+              text='Groove Wednesday'
+              label='Dance Fitness'
               path='/products'
             />
             <CardItem
               src='images/img-8.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
-              label='Adrenaline'
+              text='Charles River Biking'
+              label='Biking'
               path='/sign-up'
             />
           </ul>
