@@ -67,7 +67,6 @@ function Map() {
             }}
             onClick={() => {
                 setSelectedPark(park);
-                alert('There are about '+ (Math.floor(Math.random() * (40 - 20) ) + 20) + ' people in this area');
             }}/>
       ))}
 
@@ -80,6 +79,7 @@ function Map() {
         >
           <div>
             <h2>{selectedPark.properties.SITE_NAME}</h2>
+            <h2>{'There are about '+ (Math.floor(Math.random() * (50 - 20) ) + 20) + ' people in this area'}</h2>
           </div>
         </InfoWindow>
       )}
