@@ -28,9 +28,9 @@ function Map() {
 
   function coords(coordinates) {
     var border = []
-     for (var element of coordinates) {
-       border.push({lat: element[1], lng: element[0]});
-     }
+      for (var element of coordinates) {
+        border.push({lat: element[1], lng: element[0]});
+      }
     return border;
   }
 
@@ -54,7 +54,7 @@ function Map() {
             onClick={() => {
                 setSelectedPark(park);
             }}/>
-            // <Marker>
+            // <Marker
             //   key={park.properties.OBJECTID * 10}
             //   position={{
             //     lat: park.geometry.coordinates[0][0][1],
@@ -67,7 +67,7 @@ function Map() {
             //     url: `/marker.png`,
             //     scaledSize: new window.google.maps.Size(123, 90)
             //   }}
-            // </Marker>
+            // />
 
       ))}
 
@@ -76,10 +76,7 @@ function Map() {
           onCloseClick={() => {
             setSelectedPark(null);
           }}
-          position={{
-            lat: selectedPark.geometry.coordinates[0][0][1],
-            lng: selectedPark.geometry.coordinates[0][0][0]
-          }}
+          position={{lat: selectedPark.geometry.coordinates[0][0][1], lng: selectedPark.geometry.coordinates[0][0][0]}}
         >
           <div>
             <h2>{selectedPark.properties.SITE_NAME}</h2>
