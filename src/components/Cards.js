@@ -13,13 +13,13 @@ function Cards() {
               src='images/img-9.jpg'
               text='Trail Running with Coach Pax from Restore Human'
               label='Running &Jogging'
-              path='/services'
+              path='/event1'
             />
             <CardItem
               src='images/img-2.jpg'
               text='Restorative Yoga'
               label='Yoga & Meditation'
-              path='/services'
+              path='/event2'
             />
           </ul>
           <ul className='cards__items'>
@@ -27,19 +27,19 @@ function Cards() {
               src='images/img-3.jpg'
               text='Outdoor Hip Hop Flow'
               label='Dance Fitness'
-              path='/services'
+              path='/event3'
             />
             <CardItem
               src='images/img-4.jpg'
-              text='Groove Wednesday'
+              text='OUTDOOR Zumba on Tuesday Nights'
               label='Dance Fitness'
-              path='/products'
+              path='/event4'
             />
             <CardItem
               src='images/img-8.jpg'
               text='Charles River Biking'
               label='Biking'
-              path='/sign-up'
+              path='/event5'
             />
           </ul>
         </div>
