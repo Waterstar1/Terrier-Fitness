@@ -53,6 +53,7 @@ function Map() {
             }}
             onClick={() => {
                 setSelectedPark(park);
+                alert('There are about '+ (Math.floor(Math.random() * (40 - 20) ) + 20) + ' people in this area');
             }}/>
             // <Marker>
             //   key={park.properties.OBJECTID * 10}
@@ -89,6 +90,7 @@ function Map() {
     </GoogleMap>
   );
 }
+
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
