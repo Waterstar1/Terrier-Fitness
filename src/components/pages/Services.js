@@ -34,7 +34,7 @@ function Map() {
     return border;
   }
 
-  function getColor() {
+  function getColor(coordinate) {
 
     //GREEN - YELLOW - ORANGE - RED (in respective order)
     const colors = ['#158901', '#efe977', '#e27c4d', '#b2313c']
@@ -44,7 +44,7 @@ function Map() {
 
     //INSERT COLOR LOGIC HERE 
 
-
+    // coordinate is the location of a park in the form {lat: xxx, lng: xxx}
 
   }
 
@@ -59,7 +59,7 @@ function Map() {
             path={coords(park.geometry.coordinates[0])}
             key={park.properties.OBJECTID}
             options={{
-                fillColor: getColor(),
+                fillColor: getColor(park.geometry.coordinates[0][0]),
                 fillOpacity: 0.4,
                 strokeColor: "#000",
                 strokeOpacity: 1,
