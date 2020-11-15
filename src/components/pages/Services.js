@@ -4,7 +4,8 @@ import {
   withScriptjs,
   GoogleMap,
   Marker,
-  InfoWindow
+  InfoWindow,
+  Polygon
 } from "react-google-maps";
 import * as parkData from "./data/parks.json";
 import mapStyles from "./mapStyles";
@@ -25,28 +26,49 @@ function Map() {
     };
   }, []);
 
+  function coords(coordinates) {
+    var border = []
+     for (var element of coordinates) {
+       border.push({lat: element[1], lng: element[0]});
+     }
+    return border;
+  }
 
   return (
     <GoogleMap
       defaultZoom={16}
-      defaultCenter={{ lat: 42.3504997, lng: -71.1075878 }}
+      defaultCenter={{ lat: 42.351134, lng: -71.1073625 }}
       defaultOptions={{ styles: mapStyles }}
     >
       {parkData.features.map(park => (
-        <Marker
-          key={park.properties.OBJECTID}
-          position={{
-            lat: park.geometry.coordinates[0][0][1],
-            lng: park.geometry.coordinates[0][0][0]
-          }}
-          onClick={() => {
-            setSelectedPark(park);
-          }}
-          icon={{
-            url: `/marker.png`,
-            scaledSize: new window.google.maps.Size(123, 90)
-          }}
-        />
+          <Polygon
+            path={coords(park.geometry.coordinates[0])}
+            key={park.properties.OBJECTID}
+            options={{
+                fillColor: "#000",
+                fillOpacity: 0.4,
+                strokeColor: "#000",
+                strokeOpacity: 1,
+                strokeWeight: 1
+            }}
+            onClick={() => {
+                setSelectedPark(park);
+            }}/>
+            // <Marker>
+            //   key={park.properties.OBJECTID * 10}
+            //   position={{
+            //     lat: park.geometry.coordinates[0][0][1],
+            //     lng: park.geometry.coordinates[0][0][0]
+            //   }}
+            //   onClick={() => {
+            //     setSelectedPark(park);
+            //   }}
+            //   icon={{
+            //     url: `/marker.png`,
+            //     scaledSize: new window.google.maps.Size(123, 90)
+            //   }}
+            // </Marker>
+
       ))}
 
       {selectedPark && (
