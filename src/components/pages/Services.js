@@ -55,13 +55,12 @@ function Map() {
             setSelectedPark(null);
           }}
           position={{
-            lat: selectedPark.geometry.coordinates[1],
-            lng: selectedPark.geometry.coordinates[0]
+            lat: selectedPark.geometry.coordinates[0][0][1],
+            lng: selectedPark.geometry.coordinates[0][0][0]
           }}
         >
           <div>
-            <h2>{selectedPark.properties.NAME}</h2>
-            <p>{selectedPark.properties.DESCRIPTIO}</p>
+            <h2>{selectedPark.properties.SITE_NAME}</h2>
           </div>
         </InfoWindow>
       )}
