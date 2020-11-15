@@ -43,8 +43,8 @@ function Map() {
             setSelectedPark(park);
           }}
           icon={{
-            url: `/kirby.jpg`,
-            scaledSize: new window.google.maps.Size(50, 50)
+            url: `/marker.png`,
+            scaledSize: new window.google.maps.Size(123, 90)
           }}
         />
       ))}
