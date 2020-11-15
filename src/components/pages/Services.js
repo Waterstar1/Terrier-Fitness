@@ -34,6 +34,20 @@ function Map() {
     return border;
   }
 
+  function getColor() {
+
+    //GREEN - YELLOW - ORANGE - RED (in respective order)
+    const colors = ['#158901', '#efe977', '#e27c4d', '#b2313c']
+
+    //Comment this line of code out
+    return colors[Math.floor(Math.random() * Math.floor(4))]
+
+    //INSERT COLOR LOGIC HERE 
+
+
+
+  }
+
   return (
     <GoogleMap
       defaultZoom={16}
@@ -45,7 +59,7 @@ function Map() {
             path={coords(park.geometry.coordinates[0])}
             key={park.properties.OBJECTID}
             options={{
-                fillColor: "#000",
+                fillColor: getColor(),
                 fillOpacity: 0.4,
                 strokeColor: "#000",
                 strokeOpacity: 1,
@@ -54,21 +68,6 @@ function Map() {
             onClick={() => {
                 setSelectedPark(park);
             }}/>
-            // <Marker
-            //   key={park.properties.OBJECTID * 10}
-            //   position={{
-            //     lat: park.geometry.coordinates[0][0][1],
-            //     lng: park.geometry.coordinates[0][0][0]
-            //   }}
-            //   onClick={() => {
-            //     setSelectedPark(park);
-            //   }}
-            //   icon={{
-            //     url: `/marker.png`,
-            //     scaledSize: new window.google.maps.Size(123, 90)
-            //   }}
-            // />
-
       ))}
 
       {selectedPark && (
